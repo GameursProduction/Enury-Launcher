@@ -171,9 +171,11 @@ class Settings {
             uuid: "1234",
             launcher: {
                 close: launcherDatabase?.launcher?.close || 'close-launcher'
-            }
+            },
+            vivemod: launcherDatabase?.vivemod || false
         }
 
+        let vivecraftenable = document.getElementById("vivecraft-enable");
         let closeLauncher = document.getElementById("launcher-close");
         let closeAll = document.getElementById("launcher-close-all");
         let openLauncher = document.getElementById("launcher-open");
@@ -185,6 +187,14 @@ class Settings {
         } else if(settingsLauncher.launcher.close === 'open-launcher') {
             openLauncher.checked = true;
         }
+
+        vivecraftenable.checked = settingsLauncher.vivemod;
+
+        vivecraftenable.addEventListener("change", () => {
+            vivecraftenable.checked = false;
+            settingsLauncher.vivemod = false;
+            this.database.update(settingsLauncher, 'launcher');
+        })
 
         closeLauncher.addEventListener("change", () => {
             if(closeLauncher.checked) {

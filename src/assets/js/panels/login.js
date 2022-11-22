@@ -14,7 +14,7 @@ class Login {
     async init(config) {
         this.config = config
         this.database = await new database().init();
-        if (this.config.online) this.getOnline()
+        if (this.config.online) this.getOffline()
         else this.getOffline()
     }
 
@@ -195,6 +195,10 @@ class Login {
         mojangBtn.addEventListener("click", () => {
             document.querySelector(".login-card").style.display = "none";
             document.querySelector(".login-card-mojang").style.display = "block";
+            document.querySelector(".Password").parentNode.style.display = "none";
+            document.getElementById("username").innerHTML = "Nom d'utilisateur";
+            document.getElementById("forgotpassword").style.display = "none";
+            document.getElementById("connectbtn").innerHTML = "Ajouter le compte";
         })
 
         cancelMojangBtn.addEventListener("click", () => {

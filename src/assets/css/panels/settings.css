@@ -435,11 +435,11 @@
  * launcher settings                                                           *
  *                                                                             *
  ******************************************************************************/
- .checkbox-settings {
+ .checkbox-settings, .checkbox-settings-locked-on, .checkbox-settings-locked-off {
     display: none;
 }
 
-.checkbox-settings+label {
+.checkbox-settings+label{
     display: inline;
     position: relative;
     top: 2px;
@@ -450,6 +450,33 @@
     transition: background-color .2s;
     padding: 0px;
     background-color: #FFFFFF;
+    cursor: pointer;
+}
+.checkbox-settings-locked-on+label {
+    display: inline;
+    position: relative;
+    top: 2px;
+    margin-right: 24px;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    transition: background-color .2s;
+    padding: 0px;
+    background-color: #474747;
+    cursor: pointer;
+}
+
+.checkbox-settings-locked-off+label {
+    display: inline;
+    position: relative;
+    top: 2px;
+    margin-right: 24px;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    transition: background-color .2s;
+    padding: 0px;
+    background-color: #474747;
     cursor: pointer;
 }
 
@@ -465,11 +492,41 @@
     background-color: #00bd7a;
 }
 
+.checkbox-settings-locked-on:checked+label {
+    background-color: #00422b;
+}
+
+.checkbox-settings-locked-off:checked+label {
+    background-color: #00422b;
+}
+
 .checkround {
     border-radius: 3px;
 }
 
-.checkbox-settings+label {
+.checkbox-settings+label, .checkbox-settings-locked-off+label, .checkbox-settings-locked-on+label{
     display: inline-block;
     margin-right: 8px;
+}
+
+.check-label {
+    font: normal normal normal 12px/18px Poppins;
+    color: #FFFFFF;
+}
+
+.check-label-disabled {
+    font: normal normal normal 12px/18px Poppins;
+    color: #929292;
+}
+
+.beta {
+    font: normal normal normal 12px/18px Poppins;
+    color: #f0aa18;
+    float: right;
+}
+
+.removed {
+    font: normal normal normal 12px/18px Poppins;
+    color: #f01a1a;
+    float: right;
 }

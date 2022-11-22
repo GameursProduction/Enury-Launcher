@@ -1,11 +1,12 @@
 {
-    "name": "Selvania-Launcher",
-    "preductname": "Selvania Launcher",
-    "version": "1.0.5",
+    "name": "Enury-Launcher",
+    "preductname": "Enury Launcher",
+    "version": "1.0.0",
     "description": "Launcher Mincraft custom (crack, premium)",
     "main": "src/app.js",
-    "author": "Luuxis",
-    "url": "http://launcher.selvania.fr",
+    "author": "GameursProduction",
+    "url": "http://141.145.195.156:8080/enury/",
+    "urlvrmod": "http://141.145.195.156:8080/enury_vrmod/",
     "engines": {
         "node": "16.x.x"
     },
@@ -31,6 +32,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/luuxis/Selvania-Launcher.git"
+        "url": "git+https://github.com/GameursProduction/Enury-Launcher.git"
     }
 }

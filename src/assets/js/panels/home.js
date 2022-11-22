@@ -89,6 +89,14 @@ class Home {
     async initLaunch() {
         document.querySelector('.play-btn').addEventListener('click', async() => {
             let urlpkg = pkg.user ? `${pkg.url}/${pkg.user}` : pkg.url;
+            
+            let vrmod = ((await this.database.get('1234', 'launcher'))?.value)?.vivemod || false;
+
+            if (vrmod == true)
+            {
+                urlpkg = pkg.user ? `${pkg.urlvrmod}/${pkg.user}` : pkg.urlvrmod;
+            }
+
             let uuid = (await this.database.get('1234', 'accounts-selected')).value;
             let account = (await this.database.get(uuid.selected, 'accounts')).value;
             let ram = (await this.database.get('1234', 'ram')).value;
